@@ -1,0 +1,57 @@
+@import 'variaveis.css';
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: var(--cor-preto);
+}
+#cabecalho{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--cor-amarelo);
+}
+#lupa{
+    width: 16px;
+    height: 16px;
+    padding: 9px;
+}
+#lupa:hover{
+    fill: var(--cor-preto);
+}
+#botao-pesquisar{
+    background-color: var(--cor-preto);
+    
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    transform: rotate(90deg);
+    cursor: pointer;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border: none;
+}
+#botao-pesquisar:hover{
+    background-color: var(--cor-amarelo);
+}
+#input-pesquisa{
+    height: 34px;
+    width: 250px;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+
+    outline: none;
+    border: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+#cabecalho > #logo-biblioteca{
+    transform: rotate(-5deg);
+}
+#cabecalho > svg{
+    cursor: pointer;
+}

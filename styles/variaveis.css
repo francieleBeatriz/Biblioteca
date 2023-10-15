@@ -1,0 +1,18 @@
+:root{
+    --cor-preto: hsl(0, 0%, 5%);
+    --cor-amarelo: hsl(60, 100%, 50%);
+
+    --border-radius: 38px;
+
+    --fonte-pesada: 'Franklin Gothic Heavy';
+    --fonte-media: 'Franklin Gothic Medium';
+    --fonte-leve: 'Franklin Gothic Book';
+    --fontes-alternativas: 'Arial Narrow', Arial, sans-serif;
+
+    --cor-primaria: hsl(0, 0%, 95%);
+    --cor-secundaria: hsl(0, 0%, 5%);
+    --cor-terciaria: hsl(60, 100%, 50%);
+
+    --raio-grande: 20px;
+    --raio-pequeno: 10px;
+}

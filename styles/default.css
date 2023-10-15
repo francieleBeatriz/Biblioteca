@@ -1,0 +1,39 @@
+*{ margin: 0; padding: 0; box-sizing: border-box; }
+/* Estilizando body */
+html, body{
+    width: 100%;
+    height: 100%;
+}
+body{
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+    font-family: var(--fonte-leve), var(--fontes-alternativas);
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilizando o header */
+header{
+    flex-grow: 0;
+}
+h1{
+    font-family: var(--fonte-pesada), var(--fontes-alternativas);
+    font-weight: 900;
+    font-size: 4rem;
+}
+h2{
+    font-family: var(--fonte-leve), var(--fontes-alternativas);
+    font-weight: 900;
+    font-size: 1rem;
+}
+h3{
+    font-family: var(--fonte-media), var(--fontes-alternativas);
+    font-weight: 900;
+    font-size: 2rem;
+}
+
+/*Estilizando o main */
+main{
+    flex-grow: 1;
+}

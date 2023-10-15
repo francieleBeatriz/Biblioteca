@@ -1,0 +1,165 @@
+@import 'default.css';
+
+/* Estilização do HEADEAR */
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: var(--cor-terciaria);
+    height: 300px;
+}
+header > *{
+    width: 60%; /* limitando todos meus elementos do HEADER a uma largura de 60% */
+}
+
+/* Estilizando o menu */
+#menu > #conteudo-menu{
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    justify-content: center;
+}
+#menu > #conteudo-menu > p > a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    gap: 5px;
+    color: var(--cor-secundaria);
+    text-decoration: none;
+}
+
+/* Estilizando o botão de entrar/cadastrar */
+#entrar{
+    border: 0;
+    padding: 10px;
+    background-color: var(--cor-secundaria);
+    border-radius: var(--raio-pequeno);
+}
+#entrar > a{
+    color: var(--cor-terciaria);
+}
+
+/* Estilizando o botão do carrinho */
+#carrinho{
+    background-color: var(--cor-secundaria);
+    border-radius: var(--raio-pequeno);
+}
+#carrinho > a > span{
+    color: var(--cor-terciaria);
+}
+#carrinho > a > svg{
+    fill: var(--cor-terciaria);
+}
+/* Estilizando minha parte de texto do HEADER */
+#titulo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+#titulo > svg{
+    transform: rotate(-5deg);
+}
+/* Criando o estilo da minha barra de pesquisa */
+#pesquisar{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+#barra-pesquisar{
+    position: relative;
+    display: flex;
+    width: 694px;
+}
+#barra{
+    background-color: var(--cor-primaria);
+    width: 100%;
+    font-size: 1.2rem;
+    outline: none;
+    padding: 5px;
+    padding-left: 15px;
+
+    border: 0;
+    border-top-left-radius:5px;
+    border-bottom-left-radius:5px;
+}
+#botao-pesquisar{
+    background-color: var(--cor-secundaria);
+
+    height: 2.1rem;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    border: 2px solid var(--cor-secundaria);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+#botao-pesquisar:hover{
+    cursor: pointer;
+    background-color: rgba(15, 15, 15, 0.8);
+}
+#resultado{
+    position: absolute;
+    width: 694px;
+    margin-top: 300px;
+    z-index: 9999999;
+}
+#re-box{
+    height: max-content;
+    background-color: var(--cor-terciaria);
+}
+/* Estilizando o MAIN/conteúdo */
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#secao-livros{
+    width: 660px;
+}
+#secao-livros > h3{
+    
+}
+#container{
+    display: flex;
+    
+}
+#secao{
+    display: flex;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+#secao::-webkit-scrollbar { 
+    display: none;
+	-ms-overflow-style: none; /* IE 11 */
+    scrollbar-width: none; /* Firefox 64 */
+}
+.cartao{
+    background-color: var(--cor-terciaria);
+    margin: 5px;
+}
+.figura > img{
+    width: 200px;
+    height: 300px;
+}
+.btn{
+    background-color: var(--cor-secundaria);
+    border-radius: 20px;
+}
+.btn > svg{
+    fill: var(--cor-terciaria);
+    
+}
+.img > img{
+    width: 64px;
+    height: 64px;
+    border: 2px solid black;
+}

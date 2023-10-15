@@ -1,0 +1,110 @@
+@import 'variaveis.css';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    color: var(--cor-amarelo);
+    background-color: var(--cor-preto);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    
+    font-family: 'Montserrat', sans-serif;
+}
+#titulo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+#titulo > svg{
+    transform: rotate(-10deg);
+}
+h1{
+    font-size: 40px;
+}
+input{
+    color: white;
+    padding-left: 10px;
+    background-color: var(--cor-preto);
+    outline: none;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px var(--cor-preto) inset !important;
+    -webkit-text-fill-color:  rgb(238, 238, 238) !important;  
+  background-color: var(--cor-preto);
+}
+.campos-registro > label > input{
+    background-color: var(--cor-preto);
+    border: 3px solid var(--cor-amarelo);
+    font-weight: 500;
+    border-radius: 15px;
+
+    width: 100%;
+    height: 25px;
+}
+.campos-registro{
+    font-size: 1.4rem;
+}
+div{
+    padding: 5px;
+}
+.caixa-marcacao > label{
+    display: flex;
+    align-items: center;
+}
+#check{
+    border: 3px solid var(--cor-amarelo);
+    background-color: rgba(0, 0, 0, 1);
+    appearance: none;
+    padding: 5px;
+    cursor: pointer;
+}
+#check:checked{
+    background-color: var(--cor-amarelo);
+}
+#lembre{
+    padding: 5px;
+    cursor: pointer;
+}
+.rodape {
+    text-align: center;
+}
+.botao-submit{
+    font-weight: 700;
+    border-radius: var(--border-radius);
+    border: 5px solid var(--cor-amarelo);
+    color: var(--cor-amarelo);
+    background-color: var(--cor-preto);
+    font-size: 1.9rem;
+    text-align: center;
+    width: 210px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.botao-submit:hover{
+    color: var(--cor-preto);
+    background-color: var(--cor-amarelo);
+}
+.crie-aqui{
+    font-size: 14px;
+    padding: 20px; 
+}
+.crie-aqui > a:hover {
+    text-decoration: underline;
+}
+a{
+    text-decoration: none;
+    color: var(--cor-amarelo);
+    font-weight: 700;
+} 
