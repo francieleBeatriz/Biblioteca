@@ -6,7 +6,7 @@ header{
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    background-color: var(--cor-terciaria);
+    background-color: var(--cor-amarelo);
     height: 300px;
 }
 header > *{
@@ -26,7 +26,7 @@ header > *{
     justify-content: center;
     padding: 10px;
     gap: 5px;
-    color: var(--cor-secundaria);
+    color: var(--cor-preto);
     text-decoration: none;
 }
 
@@ -34,23 +34,23 @@ header > *{
 #entrar{
     border: 0;
     padding: 10px;
-    background-color: var(--cor-secundaria);
+    background-color: var(--cor-preto);
     border-radius: var(--raio-pequeno);
 }
 #entrar > a{
-    color: var(--cor-terciaria);
+    color: var(--cor-amarelo);
 }
 
 /* Estilizando o botão do carrinho */
 #carrinho{
-    background-color: var(--cor-secundaria);
+    background-color: var(--cor-preto);
     border-radius: var(--raio-pequeno);
 }
 #carrinho > a > span{
-    color: var(--cor-terciaria);
+    color: var(--cor-amarelo);
 }
 #carrinho > a > svg{
-    fill: var(--cor-terciaria);
+    fill: var(--cor-amarelo);
 }
 /* Estilizando minha parte de texto do HEADER */
 #titulo{
@@ -77,7 +77,7 @@ header > *{
     width: 694px;
 }
 #barra{
-    background-color: var(--cor-primaria);
+    background-color: var(--cor-branco);
     width: 100%;
     font-size: 1.2rem;
     outline: none;
@@ -89,14 +89,14 @@ header > *{
     border-bottom-left-radius:5px;
 }
 #botao-pesquisar{
-    background-color: var(--cor-secundaria);
+    background-color: var(--cor-preto);
 
     height: 2.1rem;
     padding: 5px;
     padding-left: 10px;
     padding-right: 10px;
 
-    border: 2px solid var(--cor-secundaria);
+    border: 2px solid var(--cor-preto);
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 }
@@ -112,7 +112,7 @@ header > *{
 }
 #re-box{
     height: max-content;
-    background-color: var(--cor-terciaria);
+    background-color: var(--cor-amarelo);
 }
 /* Estilizando o MAIN/conteúdo */
 main{
@@ -143,7 +143,7 @@ main{
     scrollbar-width: none; /* Firefox 64 */
 }
 .cartao{
-    background-color: var(--cor-terciaria);
+    background-color: var(--cor-amarelo);
     margin: 5px;
 }
 .figura > img{
@@ -151,11 +151,11 @@ main{
     height: 300px;
 }
 .btn{
-    background-color: var(--cor-secundaria);
+    background-color: var(--cor-preto);
     border-radius: 20px;
 }
 .btn > svg{
-    fill: var(--cor-terciaria);
+    fill: var(--cor-amarelo);
     
 }
 .img > img{

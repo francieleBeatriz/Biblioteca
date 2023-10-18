@@ -41,7 +41,7 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active{
     -webkit-box-shadow: 0 0 0 30px var(--cor-preto) inset !important;
-    -webkit-text-fill-color:  rgb(238, 238, 238) !important;  
+    -webkit-text-fill-color:  var(--cor-branco) !important;  
   background-color: var(--cor-preto);
 }
 .campos-registro > label > input{
@@ -54,7 +54,19 @@ input:-webkit-autofill:active{
     height: 25px;
 }
 .campos-registro{
-    font-size: 1.4rem;
+    font-size: 1.5rem;
+}
+.campos-login > label > input{
+    background-color: var(--cor-preto);
+    border: 3px solid var(--cor-amarelo);
+    font-weight: 500;
+    border-radius: 15px;
+
+    width: 100%;
+    height: 25px;
+}
+.campos-login{
+    font-size: 1.5rem;
 }
 div{
     padding: 5px;
