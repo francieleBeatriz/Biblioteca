@@ -26,9 +26,10 @@ body{
 }
 #titulo > svg{
     transform: rotate(-10deg);
+    padding: 10px;
 }
 h1{
-    font-size: 40px;
+    font-size: 38px;
 }
 input{
     color: white;
@@ -50,8 +51,9 @@ input:-webkit-autofill:active{
     font-weight: 500;
     border-radius: 15px;
 
-    width: 100%;
+    width: 95%;
     height: 25px;
+    padding: 5px;
 }
 .campos-registro{
     font-size: 1.5rem;
@@ -62,8 +64,9 @@ input:-webkit-autofill:active{
     font-weight: 500;
     border-radius: 15px;
 
-    width: 100%;
+    width: 95%;
     height: 25px;
+    padding: 5px;
 }
 .campos-login{
     font-size: 1.5rem;

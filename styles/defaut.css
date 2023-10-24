@@ -1,0 +1,127 @@
+@import url('variaveis.css');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: var(--fonte-site);
+    background-color: var(--cor-preto);
+}
+#header > #menu > #conteudo-menu{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-top: 10px;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+#header > #menu > #conteudo-menu > p > a{
+    display: flex;
+    align-items: center;
+}
+a{
+    text-decoration: none;
+    color: var(--cor-preto);
+}
+#btn-entrar{
+    width: 100px;
+    background-color: var(--cor-preto);
+    padding: 6px;
+    font-weight: 900;
+    border-radius: 15px;
+    border: 0;
+}
+#btn-entrar > a{
+    color: var(--cor-amarelo);
+}
+#header{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--cor-amarelo);
+    padding-bottom: 5px;
+    gap: 10px;
+}
+#header > #titulo {
+    display: flex;
+}
+#titulo > svg{
+    transform: rotate(-5deg);
+    align-items: center;
+    padding-right: 5px;
+}
+h1{
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+h2{
+    font-size: 13px;
+    font-weight: 500;
+}
+#pesquisar{
+    width: 100%;
+}
+#pesquisar > #barra-pesquisar{
+    display: flex;
+    justify-content: center;
+    width: 100%
+}
+#pesquisar > #barra-pesquisar > input{
+    height: 37px;
+    width: 70%;
+    max-width: 350px;
+    min-width: 150px;
+
+    background-color: var(--cor-preto);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    outline: none;
+    border: 0;
+    padding: 10px;
+    color: var(--cor-amarelo);
+    font-size: 1rem;
+}
+#pesquisar > #barra-pesquisar > input::placeholder{
+    color: var(--cor-amarelo);
+    opacity: 0.8;
+}
+#pesquisar > #barra-pesquisar > #botao-pesquisar{
+    width: 35px;
+    height: 37px;
+    border: 0;
+    background-color: var(--cor-preto);
+    cursor: pointer;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    stroke: var(--cor-preto); 
+    stroke-width: 3;
+}
+#pesquisar > #barra-pesquisar > #botao-pesquisar > svg:hover{
+    background-color: var(--cor-preto);
+    fill: var(--cor-amarelo);
+    stroke: var(--cor-amarelo); 
+    stroke-width: 0.5; 
+}
+#pesquisar > #barra-pesquisar > #botao-pesquisar > svg{
+    transform: rotate(90deg);
+    background-color: var(--cor-amarelo);
+    border-radius: 7px;
+    padding: 5px;
+}
+#pesquisar > #barra-pesquisar > #botao-pesquisar > svg > path{
+    stroke-width: 7%;
+}
+@media (max-width: 700px){
+    #conteudo-menu > p{
+        font-size: 0.68em;
+    }
+    #conteudo-menu{
+        gap: 3px;
+        padding: px;
+    }
+}
