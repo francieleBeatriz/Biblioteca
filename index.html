@@ -4,100 +4,82 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/defaut.css">
-    <link rel="stylesheet" href="styles/variaveis.css">
     <link rel="stylesheet" href="styles/index.css">
 
-    <script src="js/index.js" defer></script>
+    <script src="js/main.js" type="module" defer></script>
     <title>Biblioteca</title>
 </head>
 <body>
     <header id="header">
-        <nav id="menu">
-            <div id="conteudo-menu">
-                <p>
-                    <a href="livros.html">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-book-fill" viewBox="0 0 16 16">
-                        <path d="M8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
-                    </svg>
-                        Livros
-                    </a>
-                </p>
-                <p>
-                    <a href="minhaBiblioteca.html">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookshelf" viewBox="0 0 16 16">
-                        <path d="M2.5 0a.5.5 0 0 1 .5.5V2h10V.5a.5.5 0 0 1 1 0v15a.5.5 0 0 1-1 0V15H3v.5a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 .5-.5zM3 14h10v-3H3v3zm0-4h10V7H3v3zm0-4h10V3H3v3z"/>
-                    </svg>
-                        Minha Biblioteca
-                    </a>
-                </p>
-                <button id="btn-entrar">
-                    <a href="entrar.html">ENTRAR</a>
-                </button>
-            </div>
-        </nav>
-        <hgroup id="titulo">
-            <svg xmlns="http://www.w3.org/2000/svg" width="55" height="65" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16">
-                <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
-            </svg>
-            <span>
-                <h1>Biblioteca</h1>
-                <h2>Conhecimento em um só lugar.</h2>
-            </span>
-        </hgroup>
-        
-        <hgroup id="pesquisar">
-            <div id="barra-pesquisar">
-                <input type="search" placeholder="Pesquisar..." id="barra" onclick="abrirPesquisar()" oninput="pesquisa(this)">
-                <button id="botao-pesquisar">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="var(--cor-preto)" class="bi bi-search" viewBox="0 -2 16 20" >
-                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                    </svg>
-                </button>
-            </div>
-        </hgroup>
-    </header>
-<main>
-    <section id="secao-livros">
-        <h3>Livros</h3>
-        <div id="container">
-            <button onclick="voltar()" class="btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="" class="bi bi-caret-left" viewBox="0 0 16 16">
-                    <path d="M10 12.796V3.204L4.519 8 10 12.796zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753z"/>
+        <div id="header-content">
+            <nav id="menu">
+                <div id="conteudo-menu">
+                    <p>
+                        <a href="#livros-slider">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-book-fill" viewBox="0 0 16 16">
+                            <path d="M8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
+                        </svg>
+                            Livros
+                        </a>
+                    </p>
+                    <p>
+                        <a href="minhaBiblioteca.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookshelf" viewBox="0 0 16 16">
+                            <path d="M2.5 0a.5.5 0 0 1 .5.5V2h10V.5a.5.5 0 0 1 1 0v15a.5.5 0 0 1-1 0V15H3v.5a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 .5-.5zM3 14h10v-3H3v3zm0-4h10V7H3v3zm0-4h10V3H3v3z"/>
+                        </svg>
+                            Minha Biblioteca
+                        </a>
+                    </p>
+                    <button id="btn-entrar">
+                        <a href="entrar.html">ENTRAR</a>
+                    </button>
+                </div>
+            </nav>
+    
+            <hgroup id="titulo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="55" height="65" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16">
+                    <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
                 </svg>
-            </button>
-            <div id="secao">
-                <div class="secao-livros">
-                    <img src="https://m.media-amazon.com/images/I/51nh3JnQNsL._SY445_SX342_.jpg" alt="">
+                <span>
+                    <h1>Biblioteca</h1>
+                    <h2>Conhecimento em um só lugar.</h2>
+                </span>
+            </hgroup>
+            
+            <hgroup id="pesquisar">
+                <div id="barra-pesquisar">
+                    <input type="search" placeholder="Pesquisar..." id="barra">
+                    <button id="botao-pesquisar">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="var(--cor-preto)" class="bi bi-search" viewBox="0 -2 16 20" >
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                        </svg>
+                    </button>
                 </div>
-                <div class="secao-livros">
-                    <img src="https://m.media-amazon.com/images/I/518nA6KLZPL._SY445_SX342_.jpg" alt="">
+                <div id="resultados">
+    
                 </div>
-                <div class="secao-livros">
-                    <img src="https://m.media-amazon.com/images/I/51iVADM40EL._SY445_SX342_.jpg" alt="">
-                </div>
-                <div class="secao-livros">
-                    <img src="https://m.media-amazon.com/images/I/51sawEuxd-L._SY445_SX342_.jpg" alt="">
-                </div>
-                <div class="secao-livros">
-                    <img src="https://m.media-amazon.com/images/I/8173OOf2HBL._SY342_.jpg" alt="">
-                </div>
-                <div class="secao-livros">
-                    <img src="https://m.media-amazon.com/images/I/510HCDDGb3L._SY445_SX342_.jpg" alt="">
-                </div>
-                <div class="secao-livros">
-                    <img src="https://m.media-amazon.com/images/I/81tZj9h9PAL._SY342_.jpg" alt="">
-                </div>
-                <div class="secao-livros">
-                    <img src="https://m.media-amazon.com/images/I/513NSXK2nLL._SY445_SX342_.jpg" alt="">
-                </div>
-            </div>
-            <button onclick="proximo()" class="btn" id="prox">
-                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" class="bi bi-caret-right" viewBox="0 0 16 16">
-                    <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
-                </svg>
-            </button>
+            </hgroup>
         </div>
-    </section>
-</main>
+    </header>
+    <main>
+        <section id="Livros">
+            <h3>Livros</h3>
+            <div id="container">
+                <button class="btn" id="voltar">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="" class="bi bi-caret-left" viewBox="0 0 16 16" id="iconVoltar">
+                        <path d="M10 12.796V3.204L4.519 8 10 12.796zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753z"/>
+                    </svg>
+                </button>
+                <div id="livros-slider">
+                    
+                </div>
+                <button class="btn" id="prox">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" class="bi bi-caret-right" viewBox="0 0 16 16" id="iconProximo">
+                        <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
+                    </svg>
+                </button>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
