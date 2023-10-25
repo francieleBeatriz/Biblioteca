@@ -1,39 +1,73 @@
-#secao-livros{
+main{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#Livros{
     color: var(--cor-amarelo);
     font-size: 1.9rem;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
-main > #secao-livros > #container{
+#Livros > h3{
+    border-bottom: 2px solid var(--cor-amarelo);
+}
+#Livros > #container{
+    max-width: 640px;
+    position: relative;
+    margin: 0 auto;
+}
+#container > #livros-slider{
+    overflow-x: hidden;
+    scroll-behavior: smooth;
     display: flex;
 }
-#secao{
-    display: flex;
-    overflow-x: scroll;
-}
-#secao > .secao-livros{
-    display: flex;
+
+#container > #livros-slider > .livro{
     text-align: center;
     margin-right: 5px;
+    width: 150px;
+    height: 220px;
 }
-img{
-    height: 200px;
-}
-#secao > img{
-    
-}
-h3{
-    padding-top: 50px;
-}
-#container{
-    padding-top: 15px;
-    border-top: 2px solid var(--cor-amarelo);
-}
-.btn{
-    width: 50px;
-    border: 0; 
-    background-color: var(--cor-preto);
+.livro:hover{
     cursor: pointer;
 }
+#adicionar > p{
+    border-radius: 10px;
+    border: 5px dashed var(--cor-amarelo);
+    width: 140px;
+    height: 190px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}   
+
+#container > #livros-slider > .livro > img{
+    height: 210px;
+    width: 150px;
+}
+
+.btn{
+    position: absolute;
+    top: 0;
+    right: auto;
+    width: 50px;
+    height: 210px;
+    border: 0; 
+    background-color: black;
+    cursor: pointer;
+    opacity: 0.6;
+    background: linear-gradient(to left, transparent 0%, black);
+}
+#prox{
+    right: 0;
+    left: auto;
+    background: linear-gradient(to right, transparent 0%, black);
+}
 .btn > svg{
+    opacity: 0;
     fill: var(--cor-amarelo);
 }
 @media (max-width: 700px){
