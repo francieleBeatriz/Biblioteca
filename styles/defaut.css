@@ -5,24 +5,14 @@
     padding: 0;
 }
 body{
+    height: 100svh;
     display: flex;
     align-items: center;
     flex-direction: column;
     font-family: var(--fonte-site);
     background-color: var(--cor-preto);
 }
-#header > #menu > #conteudo-menu{
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    padding-top: 10px;
-    font-size: 1.1rem;
-    font-weight: 500;
-}
-#header > #menu > #conteudo-menu > p > a{
-    display: flex;
-    align-items: center;
-}
+
 a{
     text-decoration: none;
     color: var(--cor-preto);
@@ -30,12 +20,26 @@ a{
 #btn-entrar{
     width: 100px;
     background-color: var(--cor-preto);
-    padding: 6px;
+    padding: 10px;
     font-weight: 900;
     border-radius: 15px;
     border: 0;
+    width: max-content;
 }
 #btn-entrar > a{
+    color: var(--cor-amarelo);
+}
+#perfil{
+    display: flex;
+    gap: 5px;
+}
+#perfil > svg{
+    fill: var(--cor-amarelo);
+    stroke: var(--cor-amarelo);
+    stroke-width: 1;
+    
+}
+#perfil > a{
     color: var(--cor-amarelo);
 }
 #header{
@@ -47,8 +51,18 @@ a{
     padding-bottom: 5px;
     gap: 10px;
 }
-#header > #titulo {
+#conteudo-menu{
+    padding: 10px;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+#titulo {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    width: max-content;
 }
 #titulo > svg{
     transform: rotate(-5deg);
@@ -73,7 +87,7 @@ h2{
 }
 #pesquisar > #barra-pesquisar > input{
     height: 37px;
-    width: 70%;
+    width: 100%;
     max-width: 350px;
     min-width: 150px;
 
@@ -115,6 +129,42 @@ h2{
 }
 #pesquisar > #barra-pesquisar > #botao-pesquisar > svg > path{
     stroke-width: 7%;
+}
+#resultados-area{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+#resultados{
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    z-index: 99999;
+
+    font-size: 0.85em;
+
+    width: 100%;
+    max-width: 375px;
+
+    display: block;
+    gap: 10px;
+
+    background-color: var(--cor-amarelo);
+
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.resultado{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    
+}
+.titulo{
+    cursor: pointer;
+    text-decoration: underline;
+    font-weight: 600;
 }
 @media (max-width: 700px){
     #conteudo-menu > p{

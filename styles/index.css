@@ -1,40 +1,238 @@
-#secao-livros{
+@import "variaveis.css";
+
+main{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#Livros{
     color: var(--cor-amarelo);
     font-size: 1.9rem;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
-main > #secao-livros > #container{
+#Livros > h3{
+    border-bottom: 2px solid var(--cor-amarelo);
+}
+#Livros > #container{
+    max-width: 640px;
+    position: relative;
+    margin: 0 auto;
+}
+#container > #livros-slider{
+    overflow-x: hidden;
+    scroll-behavior: smooth;
     display: flex;
 }
-#secao{
-    display: flex;
-    overflow-x: scroll;
-}
-#secao > .secao-livros{
-    display: flex;
+
+#container > #livros-slider > .livro{
+    position: relative;
     text-align: center;
     margin-right: 5px;
+    width: 150px;
+    height: 220px;
 }
-img{
+.livro > .options{
+    display: none;
+    height: max-content;
+    width: max-content;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    z-index: 7777;
+}
+.options > svg{
+    width: 20px;
+    height: 20px;
+    stroke: var(--cor-preto);
+}
+.options svg > path{
+    stroke: var(--cor-preto);
+}
+#adicionar > p{
+    margin-right: 5px;
+    border-radius: 10px;
+    border: 5px dashed var(--cor-amarelo);
+    width: 150px;
     height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}   
+#adicionar > p:hover{
+    cursor: pointer;
+    border-style: solid;
+    border-radius: 10px;
+    font-weight: 700;
 }
-#secao > img{
-    
-}
-h3{
-    padding-top: 50px;
-}
-#container{
-    padding-top: 15px;
-    border-top: 2px solid var(--cor-amarelo);
+#container > #livros-slider > .livro > img{
+    height: 210px;
+    width: 150px;
 }
 .btn{
+    position: absolute;
+    top: 0;
+    right: auto;
     width: 50px;
+    height: 210px;
     border: 0; 
-    background-color: var(--cor-preto);
+    background-color: black;
     cursor: pointer;
+    opacity: 0.9;
+    background: linear-gradient(to left, transparent 0%, black);
+    z-index: 88888;
+}
+#prox{
+    right: 0;
+    left: auto;
+    background: linear-gradient(to right, transparent 0%, black);
 }
 .btn > svg{
+    
+    opacity: 0;
     fill: var(--cor-amarelo);
+}
+
+#create-book{
+    position: absolute;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+.popup{
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    background-color: var(--cor-preto);
+    
+    border-radius: 10px;
+    box-shadow: 0px 0px 1px 1px var(--cor-amarelo);
+    
+    height: 550px;
+    width: 300px;
+    padding: 20px;
+}
+#create-popup{
+    display: none;
+}
+#update-popup{
+    display: none;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px var(--cor-preto) inset !important;
+    -webkit-text-fill-color:  var(--cor-branco) !important;  
+  background-color: var(--cor-preto);
+}
+#close-create-form{
+    align-self: flex-end;
+}
+#close-create-form:hover{
+    stroke: var(--cor-amarelo);
+    stroke-width: 1;
+    cursor: pointer;
+}
+#close-update-form{
+    align-self: flex-end;
+}
+#close-update-form:hover{
+    stroke: var(--cor-amarelo);
+    stroke-width: 1;
+    cursor: pointer;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.form > label{
+    display: flex;
+    flex-direction: column;
+    color: var(--cor-amarelo);
+    font-weight: 600;
+}
+.form > label > input{
+    outline: var(--cor-amarelo);
+    border: 2px solid var(--cor-amarelo);
+    background-color: var(--cor-preto);
+    border-radius: 10px;
+    font-size: 1em;
+    color: var(--cor-amarelo);
+    width: 300px;
+    padding-left: 5px;
+    font-weight: 200;
+    padding: 3px;
+}
+.btn-form{
+    background-color: var(--cor-preto);
+    color: var(--cor-amarelo);
+    border: 3px solid var(--cor-amarelo);
+    border-radius: 10px;
+
+    font-weight: 200;
+    font-size: 16px;
+    padding: 5px;
+    gap: 5px;
+    
+}
+.btn-form:hover{
+    cursor: pointer;
+    background-color: var(--cor-amarelo);
+    color: var(--cor-preto);
+}
+#preview{
+    text-align: center;
+    width: 100%;
+    height: 100px;
+    border: 1px solid var(--cor-amarelo);
+}
+
+.resposta{
+    display: none;
+}
+.mensagem{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    
+    border-radius: 20px;
+    padding: 5px;
+
+    text-align: center;
+    font-weight: 500;
+}
+#erro{
+    border: 3px solid crimson;
+    color: crimson;
+}
+#erro > svg{
+    fill: crimson;
+    stroke: crimson;
+    stroke-width: 1;
+}
+#sucesso{
+    border: 3px solid #00541B;
+    color: #00541B;
+    
+}
+#sucesso > svg{
+    fill: #00541B;
+    stroke: #00541B;
+    stroke-width: 1;
+}
+img:hover{
+    cursor: pointer;
 }
 @media (max-width: 700px){
     #conteudo-menu > p{
@@ -45,3 +243,4 @@ h3{
         padding: 2px;
     }
 }
+
