@@ -56,7 +56,6 @@
                     </button>
                 </div>
                 <div id="resultados">
-    
                 </div>
             </hgroup>
         </div>
@@ -81,5 +80,85 @@
             </div>
         </section>
     </main>
+    <div id="create-book">
+        <div class="popup" id="create-popup">
+            <svg xmlns="http://www.w3.org/2000/svg" id="close-create-form" width="22" height="22" fill="yellow" class="bi bi-x" viewBox="0 0 16 16">
+                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+            </svg>
+            <div class="form" id="form">
+                <label for="titulo">
+                    Titulo
+                    <input type="text" id="title">
+                </label>
+                <label for="autor">
+                    Autor
+                    <input type="text" id="autor" value="">
+                </label>
+                <label for="data_lancamento">
+                    Data de Lançamento
+                    <input type="text" id="data-lancamento" value="">
+                </label>
+                <label for="quantidade_paginas">
+                    Quantidade de Páginas
+                    <input type="number" id="quantidade-paginas" value="">
+                </label>
+                <label for="descricao">
+                    Descrição
+                    <input type="text" id="descricao" value="">
+                </label>
+                <label for="imagem_capa">
+                    Imagem da Capa
+                    <input type="text" id="imagem-capa" value="">
+                </label>
+                <div id="preview">
+                </div>
+            </div>
+            <button class="btn-form" id="create" value="">
+                Criar
+            </button>
+            <div class="resposta">
+
+            </div>
+        </div>
+        <div class="popup" id="update-popup">
+            <svg xmlns="http://www.w3.org/2000/svg" id="close-update-form" width="22" height="22" fill="yellow" class="bi bi-x" viewBox="0 0 16 16">
+                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+            </svg>
+            <div class="form" id="form">
+                <label for="titulo">
+                    Titulo
+                    <input type="text" id="titulo-book">
+                </label>
+                <label for="autor">
+                    Autor
+                    <input type="text" id="autor-book">
+                </label>
+                <label for="data_lancamento">
+                    Data de Lançamento
+                    <input type="text" id="data-lancamento-book">
+                </label>
+                <label for="quantidade_paginas">
+                    Quantidade de Páginas
+                    <input type="number" id="quantidade-paginas-book">
+                </label>
+                <label for="descricao">
+                    Descrição
+                    <input type="text" id="descricao-book">
+                </label>
+                <label for="imagem_capa">
+                    Imagem da Capa
+                    <input type="text" id="imagem-capa-book">
+                </label>
+                <div id="preview">
+                </div>
+            </div>
+            <button class="btn-form" id="update">
+                Atualizar
+            </button>
+            <div class="resposta" id="respostaUpdate">
+                
+            </div>
+        </div>
+    </div>
 </body>
 </html>

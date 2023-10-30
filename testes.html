@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtros</title>
+    <style>
+        body{
+            width: 100svw;
+            height: 100svh;
+        }
+        main{
+            display: flex;
+            gap: 10px;
+            
+        }
+        #filters{
+            display: flex;
+            gap: 10px;
+        }
+        #filters > button{
+            font-size: 2rem;
+        }
+        #selectedFilters{
+            color: crimson;
+            display: flex;
+            gap: 10px; 
+        }
+        #selectedFilters > #filter{
+            border: 5px solid crimson;
+            display: flex;
+            font-size: 2rem;
+        }
+        .close{
+            color: crimson;
+            font-weight: 900;
+            font-size: 2rem;
+            border: none;
+            background-color: rgba(0, 0, 0, 0);
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div id="filters">
+            <button id="author">AUTHOR</button>
+            <button id="title">TITLE</button>
+            <div id="selectedFilters">
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const FILTERS = document.querySelector("#filters");
+        const SELECTED_FILTERS = document.querySelector("#selectedFilters");
+
+        FILTERS.addEventListener("click", (element) => {
+            switch(element.target.tagName)
+            {
+                case "BUTTON":
+                    let filter = document.querySelector("#filter");
+                    if(element.target.id == "author" && !filter)
+                    {
+                        SELECTED_FILTERS.innerHTML += `
+                            <div id="filter">
+                                <button class="close">x</button>
+                                <p>
+                                    Author
+                                </p>
+                            </div>
+                        `
+                    }
+                    else if(element.target.id == "title" && !filter)
+                    {
+                        SELECTED_FILTERS.innerHTML += `
+                            <div id="filter">
+                                <button class="close">x</button>
+                                <p>
+                                    Title
+                                </p>
+                            </div>
+                        `
+                    }
+                    else if(element.target.className == "close")
+                    {
+                        element.target.parentNode.parentNode.removeChild(element.target.parentNode);
+                    }
+                    break;
+                }
+        });
+    </script>
+</body>
+</html>

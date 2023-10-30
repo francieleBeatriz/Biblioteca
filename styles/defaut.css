@@ -13,7 +13,7 @@ body{
     background-color: var(--cor-preto);
 }
 #header-content{
-    max-width: 390px;
+    max-width: 410px;
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -23,7 +23,7 @@ body{
     align-items: center;
     gap: 20px;
     padding-top: 10px;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 500;
 }
 #header-content > #menu > #conteudo-menu > p > a{
@@ -37,12 +37,26 @@ a{
 #btn-entrar{
     width: 100px;
     background-color: var(--cor-preto);
-    padding: 6px;
+    padding: 10px;
     font-weight: 900;
     border-radius: 15px;
     border: 0;
+    width: max-content;
 }
 #btn-entrar > a{
+    color: var(--cor-amarelo);
+}
+#perfil{
+    display: flex;
+    gap: 5px;
+}
+#perfil > svg{
+    fill: var(--cor-amarelo);
+    stroke: var(--cor-amarelo);
+    stroke-width: 1;
+    
+}
+#perfil > a{
     color: var(--cor-amarelo);
 }
 #header{
@@ -54,9 +68,18 @@ a{
     padding-bottom: 5px;
     gap: 10px;
 }
-#header-content > #titulo {
+#conteudo-menu{
+    padding: 10px;
     display: flex;
+    align-items: center;
     justify-content: center;
+    gap: 30px;
+}
+#titulo {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    width: max-content;
 }
 #titulo > svg{
     transform: rotate(-5deg);
