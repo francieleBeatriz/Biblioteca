@@ -14,7 +14,7 @@ let closeCreateBookForm = document.querySelector("#close-create-form");
 let closeUpdateBookForm = document.querySelector("#close-update-form");
 let btnCreateBook = document.querySelector("#create"); 
 let btnUpdateBook = document.querySelector("#update");
-
+ 
 // Verificando se o usuário está logado e trocando ENTRAR pelo nick
 if(localStorage.getItem("token") != null)
 {
