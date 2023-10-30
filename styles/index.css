@@ -40,7 +40,7 @@ main{
     width: max-content;
     position: absolute;
     top: 5px;
-    left: 110px;
+    left: 5px;
     z-index: 7777;
 }
 .options > svg{
@@ -231,7 +231,9 @@ input:-webkit-autofill:active{
     stroke: #00541B;
     stroke-width: 1;
 }
-
+img:hover{
+    cursor: pointer;
+}
 @media (max-width: 700px){
     #conteudo-menu > p{
         font-size: 0.68em;

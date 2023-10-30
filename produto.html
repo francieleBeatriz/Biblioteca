@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="styles/defaut.css">
     <link rel="stylesheet" href="styles/produto.css">
 
+    <script src="js/pesquisar.js" defer></script>
     <script src="js/produto.js" type="module" defer></script>
     <title>Biblioteca</title>
 </head>
@@ -50,49 +51,22 @@
         
         <hgroup id="pesquisar">
             <div id="barra-pesquisar">
-                <input type="search" placeholder="Pesquisar..." id="barra" onclick="abrirPesquisar()" oninput="pesquisa(this)">
+                <input type="search" placeholder="Pesquisar..." id="barra">
                 <button id="botao-pesquisar">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="var(--cor-preto)" class="bi bi-search" viewBox="0 -2 16 20" >
                         <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
                     </svg>
                 </button>
             </div>
+            <div id="resultados-area">
+                <div id="resultados">
+                
+                </div>
+            </div>
         </hgroup>
     </header>
     <main>
-        <section>
-            <img src="images/livros_capas/a_divina_comedia.jpg" alt="A divina comédia">
-            <div id="content">
-                <div id="title">
-                    <span></span>
-                    <img src="images/icons/produto/book.svg" alt="" srcset="">
-                </div>
-                <div id="autor">
-                    <span></span>
-                    <img src="images/icons/produto/person-fill.svg" alt="" srcset="">
-                </div>
-                <div id="data_lancamento">
-                    <span></span>
-                    <img src="images/icons/produto/calendar-check-fill.svg" alt="" srcset="">
-                </div>
-                <div id="quantidade_paginas">
-                    <span></span>
-                    <img src="images/icons/produto/book-half.svg" alt="">
-                </div>
-                <div id="descricao">
-                    <span></span>
-                    <img src="images/icons/produto/file-earmark-font-fill.svg" alt="" srcset="">
-                </div>
-            </div>
-            <div>
-                <button>
-                    Reservar
-                </button>
-                <div id="warn">
-                    <img src="images/icons/produto/exclamation-triangle-fill.svg" alt="" srcset="">
-                    Não copiamos nenhum livro!
-                </div>
-            </div>
+        <section id="produto">
         </section>
     </main>
 </body>
