@@ -12,24 +12,7 @@ body{
     font-family: var(--fonte-site);
     background-color: var(--cor-preto);
 }
-#header-content{
-    max-width: 410px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-#header-content > #menu > #conteudo-menu{
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    padding-top: 10px;
-    font-size: 1rem;
-    font-weight: 500;
-}
-#header-content > #menu > #conteudo-menu > p > a{
-    display: flex;
-    align-items: center;
-}
+
 a{
     text-decoration: none;
     color: var(--cor-preto);
@@ -147,7 +130,15 @@ h2{
 #pesquisar > #barra-pesquisar > #botao-pesquisar > svg > path{
     stroke-width: 7%;
 }
+#resultados-area{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
 #resultados{
+    margin-left: auto;
+    margin-right: auto;
     position: absolute;
     z-index: 99999;
 
@@ -156,8 +147,7 @@ h2{
     width: 100%;
     max-width: 375px;
 
-    display: flex;
-    flex-direction: column;
+    display: block;
     gap: 10px;
 
     background-color: var(--cor-amarelo);
@@ -169,6 +159,7 @@ h2{
     padding: 10px;
     display: flex;
     flex-direction: column;
+    
 }
 .titulo{
     cursor: pointer;

@@ -32,8 +32,11 @@ function entrar()
             if(response.status == 200)
             {
                 localStorage.setItem("token", response.token);
+                localStorage.setItem("user", user.value);
                 window.location.href = "index.html";
             }
+            user.value = "";
+            password.value = "";
             msg.innerHTML = mensagem(response.status, response.message);
 
         }
@@ -45,7 +48,5 @@ function entrar()
         }
     )
 
-    user.value = "";
-    password.value = "";
 }
 
