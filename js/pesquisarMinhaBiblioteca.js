@@ -1,6 +1,8 @@
 let resultados = document.querySelector("#resultados");
 let barra = document.querySelector("#barra");
 
+const URL = "http://localhost/api.biblioteca";
+
 async function pesquisar()
 {
     resultados.innerHTML = ``;
@@ -11,7 +13,12 @@ async function pesquisar()
         pesquisa = pesquisa.normalize('NFD').replace(/[\u0300-\u036f]/g, ""); // retirando acentos
 
         let livros = await fetch(
-            `http://localhost/api.biblioteca/livros/${pesquisa}`,
+            URL + `/minhaBiblioteca/${pesquisa}`,
+            {
+                headers: {
+                    "Authorization": localStorage.getItem("token")
+                }
+            }
         );
         livros = await livros.json();
 
@@ -26,9 +33,6 @@ async function pesquisar()
                     </span>
                     <span class="autor">
                         por ${livros[book]["autor"]}
-                    </span>
-                    <span class="desc">
-                        ${livros[book]["descricao"].substr(0, 61) + "..."}
                     </span>
                 </div>
             `;

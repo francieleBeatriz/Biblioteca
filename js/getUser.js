@@ -1,8 +1,10 @@
+const URL = "http://localhost/api.biblioteca";
+
 export async function convertTokenToUser()
 {
     let user;
     await fetch(
-        "http://localhost/api.biblioteca/user",
+        URL + "/user",
         {
             method: "POST",
             body: JSON.stringify({

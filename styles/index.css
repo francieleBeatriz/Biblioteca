@@ -35,10 +35,10 @@ main{
     height: 220px;
 }
 .livro > .options{
+    position: absolute;
     display: none;
     height: max-content;
     width: max-content;
-    position: absolute;
     top: 5px;
     left: 5px;
     z-index: 7777;

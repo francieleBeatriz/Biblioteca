@@ -1,11 +1,4 @@
-#minha-biblioteca:hover{
-    border-top: 2px solid var(--cor-preto);
-    border-bottom: 2px solid var(--cor-preto);
-    font-weight: bold;
-}
-#minha-biblioteca:hover, #logo-minha-biblioteca:hover{
-    stroke: var(--cor-preto);
-}
+
 #titulo > a > svg{
     transform: rotate(-5deg);
     padding-right: 5px;
@@ -21,21 +14,26 @@
     border: 0;
     border-radius: 5px;
     margin-top: 5px;
-    margin-bottom: 5px;
+    cursor: pointer;
 }
 #filtro{
     height: 35px;
     width: 45px;
+    cursor: pointer;
 }
 #seta{
     height: 20px;
     width: 20px;
     margin-top: 4px;
+    cursor: pointer;
 }
 #pai-card{
+    padding-top: 10px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
+    width: 700px;
+    color: var(--cor-amarelo);
 }
 img{
     height: 370px;
@@ -45,6 +43,72 @@ img{
 #pai-card > .card > p{
     color: var(--cor-amarelo);
     width: 230px;
+}
+.lixeira{
+    position: relative;
+    height: 15px;
+    width: 230px;
+    opacity: 0;
+}
+.lixeira > svg{
+    display: flex;
+    right: 0;
+    position: absolute;
+    cursor: pointer;
+}
+#filtros{
+    display: none;
+    height: 40px;
+    width: 160px;
+    padding: 5px;
+    margin-top: 2px;
+
+    background-color: var(--cor-amarelo);
+    color: var(--cor-site);
+    border-radius: 5px;
+    position: absolute;
+    z-index: 99999;
+}
+#filtros > button{
+    font-weight: 600;
+}
+#filter{
+    display: flex;
+    align-items: center;
+    position: relative;
+    border: 2px solid var(--cor-amarelo);
+    color: var(--cor-amarelo);
+    border-radius: 5px;
+}
+#filter > p{
+    padding: 2px;
+}
+#filter > .close{
+    background-color: var(--cor-preto);
+    color: var(--cor-amarelo);
+    padding-right: 5px;
+    padding: 3px;
+    font-size: 1rem;
+    font-weight: 800;
+}
+#filtros > button{
+    font-size: 1rem;
+}
+button{
+    background-color: var(--cor-amarelo);
+    border: 0;
+    cursor: pointer;
+}
+#selecioneFiltros{
+    display: flex;
+    padding: 5px;
+}
+#funcoes-filtro{
+    display: flex;
+}
+.options{
+    position: absolute;
+    padding: 5px;
 }
 @media (max-width: 800px){
     #pai-card{

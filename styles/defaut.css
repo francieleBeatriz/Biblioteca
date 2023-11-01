@@ -166,6 +166,15 @@ h2{
     text-decoration: underline;
     font-weight: 600;
 }
+
+.menu-item:hover{
+    border-top: 2px solid var(--cor-preto);
+    border-bottom: 2px solid var(--cor-preto);
+    font-weight: bold;
+}
+.menu-item:hover, .logo:hover{
+    stroke: var(--cor-preto);
+}
 @media (max-width: 700px){
     #conteudo-menu > p{
         font-size: 0.68em;

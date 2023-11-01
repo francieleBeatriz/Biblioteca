@@ -1,20 +1,28 @@
+import { convertTokenToUser } from "./getUser.js";
+
 let produto = document.querySelector("#produto");
 let titulo = localStorage.getItem("titulo");
 titulo = titulo.toLowerCase().replace(/\s/gi, "-");
 titulo = titulo.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
-const USER = localStorage.getItem("user");
+const URL = "http://localhost/api.biblioteca";
 
-if(USER)
+async function renderBtnUser()
 {
-    document.querySelector("#btn-entrar").innerHTML = `
-        <div id="perfil">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="bi bi-person" viewBox="0 0 16 16">
-                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
-            </svg>
-            <a href="perfil.html">${USER}</a>
-        </div>
-    `;
+    let user = await convertTokenToUser();
+
+    if(user)
+    {
+        document.querySelector("#btn-entrar").innerHTML = `
+            <div id="perfil">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="bi bi-person" viewBox="0 0 16 16">
+                    <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
+                </svg>
+                <a href="perfil.html">${user}</a>
+            </div>
+        `;
+    }
 }
+renderBtnUser();
 
 function sectionProduto(titulo, autor, data_lancamento, quantidade_paginas, descricao, imagem_capa)
 {
@@ -69,7 +77,7 @@ async function addBookOnMyLibrary(livro)
 {
 
     let dados = await fetch(
-        `http://localhost/api.biblioteca/minhaBiblioteca`,
+        URL + `/minhaBiblioteca`,
         {
             method: "POST",
             body: JSON.stringify(livro)
@@ -86,6 +94,8 @@ function addWarn(message)
 produto.addEventListener("click", 
     async function (element)
     {
+        const USER = document.querySelector("#perfil");
+
         if(element.target.tagName == "BUTTON" && USER)
         {
             const TITULO = document.querySelector("#produto-titulo");
@@ -97,10 +107,10 @@ produto.addEventListener("click",
             
             let response = await addBookOnMyLibrary(
                 {
-                    "user": USER,
+                    "user": USER.lastElementChild.innerText,
                     "titulo": TITULO.innerText,
                     "autor": AUTOR.innerText,
-                    "path": IMAGEM_CAPA.src
+                    "path": IMAGEM_CAPA.src.substr(IMAGEM_CAPA.src.indexOf("images"), IMAGEM_CAPA.src.length)
                 }
             );
 
@@ -121,7 +131,7 @@ produto.addEventListener("click",
 )
 
 fetch(
-    `http://localhost/api.biblioteca/livros/${titulo}`,
+    URL + `/livros/${titulo}`,
 ).then(
     function(response)
     {

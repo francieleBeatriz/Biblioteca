@@ -2,6 +2,8 @@ import { mensagem } from "./mensagensFeedback.js";
 
 let btnCadastrar = document.querySelector("#sing-up");
 
+const URL = "http://localhost/api.biblioteca";
+
 btnCadastrar.addEventListener("click", () => cadastrar())
 
 function cadastrar()
@@ -14,7 +16,7 @@ function cadastrar()
     let msg = document.querySelector("#mensagens");
 
     fetch(
-        "http://localhost/api.biblioteca/register",
+        URL + "/register",
         {
             method: "POST",
             body: JSON.stringify({
