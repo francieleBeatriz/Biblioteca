@@ -15,11 +15,13 @@ let closeUpdateBookForm = document.querySelector("#close-update-form");
 let btnCreateBook = document.querySelector("#create"); 
 let btnUpdateBook = document.querySelector("#update");
 
+const URL = "http://localhost/api.biblioteca";
+
 // Verificando se o usuário está logado e trocando ENTRAR pelo nick
 if(localStorage.getItem("token") != null)
 {
     fetch(
-        "http://localhost/api.biblioteca/user",
+        URL + "/user",
         {
             method: "post",
             body: JSON.stringify({
@@ -58,7 +60,7 @@ async function mostrarLivros()
 {
     livrosSlider.innerHTML = ``;
     let livros = await fetch(
-        "http://localhost/api.biblioteca/livros"
+        URL + "/livros"
     )
     livros = await livros.json();
     
@@ -147,7 +149,7 @@ async function updateOnBD(cod, titulo)
     title = title.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
   
     fetch(
-        `http://localhost/api.biblioteca/livros`,
+        URL + `/livros`,
         {
             method: "PUT",
             body: JSON.stringify({
@@ -223,7 +225,7 @@ async function createBook()
     if(await verificaImagem(IMAGEM_CAPA) == true)
     {
         fetch(
-            "http://localhost/api.biblioteca/registerBook",
+            URL + "/registerBook",
             {
                 method: "POST",
                 body: JSON.stringify(
@@ -264,9 +266,9 @@ async function createBook()
 }
 function removeBook(cod)
 {
-    console.log(`http://localhost/api.biblioteca/livros/${titulo}`);
+    console.log(URL + `/livros/${titulo}`);
     fetch(
-        `http://localhost/api.biblioteca/livros/${titulo}`,
+        URL + `/livros/${titulo}`,
         {
             method: "DELETE"
         }
@@ -286,7 +288,7 @@ function removeBook(cod)
 async function renderAdmin()
 {
     let user = await convertTokenToUser();
-    console.log(user)
+    
     if(user && /[0-9]{3}@/.test(user))
     {
         livrosSlider.innerHTML += `
@@ -326,7 +328,7 @@ async function renderAdmin()
             if(classElement.className.baseVal.indexOf("bi-pencil-square") > 0)
             {
                 let response = await fetch(
-                    `http://localhost/api.biblioteca/livros/${titulo}`
+                    URL + `/livros/${titulo}`
                 );
                 response = await response.json();
                 updatePopUp(response[0]);
@@ -337,12 +339,12 @@ async function renderAdmin()
                 return;
             }
             else if(classElement.className.baseVal.indexOf("bi-trash3-fill") > 0){
-                if(confirm("Deseja realmente excluir este livro!"))
+                if(confirm("Deseja realmente excluir este livro?"))
                 {
                     removeBook(element.target);
+                    location.reload(true);
                 }
             }
-            
         }
         else if(element.target.tagName == "IMG")
         {

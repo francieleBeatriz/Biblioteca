@@ -2,6 +2,8 @@ import { mensagem } from "./mensagensFeedback.js";
 
 let btnEntrar = document.querySelector("#sing-in");
 
+const URL = "http://localhost/api.biblioteca";
+
 btnEntrar.addEventListener("click", () => entrar())
 
 function entrar()
@@ -12,7 +14,7 @@ function entrar()
     let password = document.querySelector("#senha");
 
     fetch(
-        "http://localhost/api.biblioteca/auth",
+        URL + "/auth",
         {
             method: "POST",
             body: JSON.stringify({
