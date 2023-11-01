@@ -10,7 +10,7 @@
     transform: rotate(-5deg);
     padding-right: 5px;
 }
-.botao-filtro{
+#botao-filtro{
     display: flex;
     align-items: center;
     width: 80px;
@@ -40,6 +40,7 @@
 img{
     height: 370px;
     width: 230px;
+    color: white;
 }
 #pai-card > .card > p{
     color: var(--cor-amarelo);
@@ -47,6 +48,6 @@ img{
 }
 @media (max-width: 800px){
     #pai-card{
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
     }
 }

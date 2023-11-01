@@ -1,12 +1,12 @@
 import { mensagem } from "./mensagensFeedback.js";
+import { convertTokenToUser } from "./getUser.js";
 
-let barra = document.querySelector("#barra");
 let livrosSlider = document.querySelector("#livros-slider");
 let btnProx = document.querySelector("#prox");
 let btnVoltar = document.querySelector("#voltar");
 let arrowDireita = document.querySelector("#iconProximo");
 let arrowEsquerda = document.querySelector("#iconVoltar");
-let resultados = document.querySelector("#resultados");
+
 let btnEntrar = document.querySelector("#btn-entrar");
 
 let createBookDiv = document.querySelector("#create-book");
@@ -56,6 +56,7 @@ if(localStorage.getItem("token") != null)
 
 async function mostrarLivros()
 {
+    livrosSlider.innerHTML = ``;
     let livros = await fetch(
         "http://localhost/api.biblioteca/livros"
     )
@@ -75,76 +76,12 @@ async function mostrarLivros()
                     </svg>
                 </div>
                 <img src="${livros[book]["imagem_capa"]}" alt="${livros[book]["titulo"]}">
+                <span style="display: none;" id="cod">${livros[book]["cod"]}</span>
             </div>
         `;
     }
 }
 mostrarLivros();
-
-async function pesquisar()
-{
-    resultados.innerHTML = ``;
-    if(barra.value.length > 3)
-    {
-        
-        let pesquisa = barra.value.toLowerCase().replace(/\s/gi, "-"); // retirando espaços
-        pesquisa = pesquisa.normalize('NFD').replace(/[\u0300-\u036f]/g, ""); // retirando acentos
-
-        let livros = await fetch(
-            `http://localhost/api.biblioteca/livros/${pesquisa}`,
-        );
-        livros = await livros.json();
-
-        for(let book in livros)
-        {
-            resultados.innerHTML += `
-                <div class="resultado">
-                    <span class="titulo">
-                        ${livros[book]["titulo"]}
-                    </span>
-                    <span class="autor">
-                        por ${livros[book]["autor"]}
-                    </span>
-                    <span class="desc">
-                        ${livros[book]["descricao"].substr(0, 61) + "..."}
-                    </span>
-                </div>
-            `;
-        }
-    }
-    
-}
-
-// Pegar usuário
-async function convertTokenToUser()
-{
-    let user;
-    await fetch(
-        "http://localhost/api.biblioteca/user",
-        {
-            method: "POST",
-            body: JSON.stringify({
-                "Authorization": localStorage.getItem("token")
-            })
-        }
-    ).then(
-        function (response)
-        {
-            return response.json();
-        }
-    ).then(
-        function (response)
-        {
-            user = response.user;
-        }
-    ).catch(
-        function (response)
-        {
-            console.log(response.json());
-        }
-    )
-    return user;
-}
 
 // Controle do Slider
 function proximo()
@@ -195,25 +132,26 @@ function updatePopUp(livro)
         IMAGEM_CAPA.value = livro["imagem_capa"];
     }
 }
-async function updateOnBD(titulo, livro)
+async function updateOnBD(cod, titulo)
 {
+    console.log(cod);
     const TITULO = document.querySelector("#titulo-book");
     const AUTOR = document.querySelector("#autor-book");
     const DATA_LANCAMENTO = document.querySelector("#data-lancamento-book");
     const QUANTIDADE_PAGINAS = document.querySelector("#quantidade-paginas-book");
     const DESCRICAO = document.querySelector("#descricao-book");
     const IMAGEM_CAPA = document.querySelector("#imagem-capa-book");
-
     let resultadoUpdate = document.querySelectorAll(".resposta")[1];
     let title = titulo;
     title = title.toLowerCase().replace(/\s/gi, "-"); // retirando espaços
     title = title.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
-
+  
     fetch(
         `http://localhost/api.biblioteca/livros`,
         {
             method: "PUT",
             body: JSON.stringify({
+                "cod": cod,
                 "titulo": TITULO.value,
                 "autor": AUTOR.value,
                 "data_lancamento": DATA_LANCAMENTO.value,
@@ -324,7 +262,7 @@ async function createBook()
     DESCRICAO.value = "";
     IMAGEM_CAPA.value = "";
 }
-function removeBook(titulo)
+function removeBook(cod)
 {
     console.log(`http://localhost/api.biblioteca/livros/${titulo}`);
     fetch(
@@ -348,6 +286,7 @@ function removeBook(titulo)
 async function renderAdmin()
 {
     let user = await convertTokenToUser();
+    console.log(user)
     if(user && /[0-9]{3}@/.test(user))
     {
         livrosSlider.innerHTML += `
@@ -369,17 +308,22 @@ async function renderAdmin()
         else if(element.target.tagName == "svg" || element.target.tagName == "path" && divAdicionar)
         {
             let titulo = "";
-            if(element.target.tagName == "svg" )
+            let classElement= "";
+            if(element.target.tagName == "svg")
             {
-                titulo = element.target.parentNode.parentNode.lastElementChild.alt;
+                titulo = element.target.parentNode.parentNode.childNodes[3].alt;
+                classElement = element.target;
             }
             else
             {
-                titulo = element.target.parentNode.parentNode.parentNode.lastElementChild.alt;
+                titulo = element.target.parentNode.parentNode.parentNode.childNodes[3].alt;
+                classElement = element.target.parentNode;
             }
             titulo = titulo.toLowerCase().replace(/\s/gi, "-"); // retirando espaços
             titulo = titulo.normalize('NFD').replace(/[\u0300-\u036f]/g, ""); // retirando acentos
-            if(element.target.className.baseVal.indexOf("bi-pencil-square") > 0)
+            let cod = classElement.parentNode.parentNode.lastElementChild.innerText;
+
+            if(classElement.className.baseVal.indexOf("bi-pencil-square") > 0)
             {
                 let response = await fetch(
                     `http://localhost/api.biblioteca/livros/${titulo}`
@@ -388,11 +332,17 @@ async function renderAdmin()
                 updatePopUp(response[0]);
 
                 btnUpdateBook.addEventListener("click", () => {
-                    updateOnBD(titulo, response[0]);
+                    updateOnBD(cod, titulo);
                 });
                 return;
             }
-            removeBook(titulo);
+            else if(classElement.className.baseVal.indexOf("bi-trash3-fill") > 0){
+                if(confirm("Deseja realmente excluir este livro!"))
+                {
+                    removeBook(element.target);
+                }
+            }
+            
         }
         else if(element.target.tagName == "IMG")
         {
@@ -415,8 +365,6 @@ async function renderAdmin()
 }
 
 // Event Listenners
-barra.addEventListener("input", () => pesquisar());
-
 btnProx.addEventListener("click", () => proximo());
 btnProx.addEventListener("mouseover", () => {
     btnProx.style.opacity = "0.8";
