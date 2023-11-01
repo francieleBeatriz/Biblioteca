@@ -5,34 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/variaveis.css">
     <link rel="stylesheet" href="styles/defaut.css">
-    <link rel="stylesheet" href="styles/minhaBiblioteca.css">
+    <link rel="stylesheet" href="styles/profile.css">
 
-    <script src="js/minhaBiblioteca.js" type="module" defer></script>
-    <script src="js/pesquisarMinhaBiblioteca.js" type="module" defer></script>
-    <title>Minha Biblioteca</title>
+    <title>Perfil | Biblioteca</title>
+
+    <script src="js/profile.js" type="module" defer></script>
 </head>
 <body>
     <header id="header">
         <nav id="menu">
             <div id="conteudo-menu">
-                <p class="menu-item">
+                <p>
                     <a href="index.html#livros-slider">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-book-fill" viewBox="0 0 16 16" class="logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-book-fill" viewBox="0 0 16 16">
                         <path d="M8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
                     </svg>
                         Livros
                     </a>
                 </p>
-                <p id="minha-biblioteca" class="menu-item">
+                <p id="minha-biblioteca">
                     <a href="minhaBiblioteca.html">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookshelf" viewBox="0 0 16 16" id="logo-minha-biblioteca" class="logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookshelf" viewBox="0 0 16 16" id="logo-minha-biblioteca">
                         <path d="M2.5 0a.5.5 0 0 1 .5.5V2h10V.5a.5.5 0 0 1 1 0v15a.5.5 0 0 1-1 0V15H3v.5a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 .5-.5zM3 14h10v-3H3v3zm0-4h10V7H3v3zm0-4h10V3H3v3z"/>
                     </svg>
                         Minha Biblioteca
                     </a>
                 </p>
                 <button id="btn-entrar">
-                    <a href="entrar.html">ENTRAR</a>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                      </svg>
+                    <a href="#">User</a>
                 </button>
             </div>
         </nav>
@@ -59,39 +63,22 @@
                     </svg>
                 </button>
             </div>
-            <div id="resultados-area">
-                <div id="resultados">
-                
-                </div>
-            </div>
         </hgroup>
     </header>
     <main>
-        <div>
-            <div id="funcoes-filtro" >
-                <button id="botao-filtro">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter" viewBox="0 0 16 16" id="filtro">
-                    <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
-                    </svg>
-                    |
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16" id="seta">
-                        <path d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z"/>
-                    </svg>
-                </button>
-                <div id="selecioneFiltros">
-                </div>
+        <div id="card">
+            <div id="img-perfil"> 
+                <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                </svg>
             </div>
-            <div id="filtros">
-                <button id="titulo-A-Z">
-                    Títulos de A a Z
-                </button>
-                <button id="autor-A-Z">
-                    Autores de A a Z
-                </button>
+            <div id="informacoes">
+                
             </div>
         </div>
-        <div id="pai-card">
-        </div>
+        <button id="button-logout">LOGOUT</button>
+        <button id="button-delete-account">DELETE ACCOUNT</button>
     </main>
 </body>
 </html>

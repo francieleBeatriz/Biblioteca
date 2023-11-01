@@ -1,0 +1,117 @@
+#titulo > a > svg{
+    transform: rotate(-5deg);
+    padding-right: 5px;
+}
+#btn-profile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 90px;
+    background-color: var(--cor-preto);
+    padding: 6px;
+    font-weight: 900;
+    border-radius: 15px;
+    border: 0;
+}
+#btn-profile > svg{
+    fill: var(--cor-amarelo);
+}
+#btn-profile > a{
+    color: var(--cor-amarelo);
+}
+
+#img-perfil{
+    align-items: center;
+    justify-content: center;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 350px;
+}
+h2, h3{
+    font-size: 1.2rem;
+}
+h3{
+    font-weight: 800;
+}
+#card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    color: var(--cor-amarelo);
+}
+#button-logout{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    width: 140px;
+    background-color: var(--cor-amarelo);
+    color: var(--cor-preto);
+    border: 0;
+    border: 2px solid var(--cor-preto);
+
+    font-size: 1.7rem;
+    font-weight: 900;
+    border-radius: 2px;
+    margin-top: 20px;
+    
+}
+#button-logout:hover{
+    cursor: pointer;
+    border-color: var(--cor-amarelo);
+    background-color: var(--cor-preto);
+    color: var(--cor-amarelo);
+}
+#button-delete-account{
+    background-color: var(--cor-preto);
+    border: 2px solid crimson;
+
+    color: crimson;
+
+    font-size: 1rem;
+    font-weight: 900;
+    border-radius: 2px;
+    margin-top: 5px;
+    padding: 5px;
+}
+#button-delete-account:hover{
+    cursor: pointer;
+    background-color: crimson;
+    color: var(--cor-preto);
+}
+.info{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.editar{
+    cursor: pointer;
+}
+input{
+    background-color: var(--cor-preto);
+    border: none;
+    color: var(--cor-amarelo);
+    font-size: 1.5rem;
+}
+@media (max-width: 800px){
+    #card{
+        display: block;
+        
+    }
+    #img-perfil{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 50px;
+        margin-bottom: 10px;
+    }
+    #conteudo-menu{
+        width: 270px;
+    }
+}

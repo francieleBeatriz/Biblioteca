@@ -39,12 +39,14 @@ if(localStorage.getItem("token") != null)
             if(response.status != 400)
             {
                 btnEntrar.innerHTML = `
-                    <div id="perfil">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="bi bi-person" viewBox="0 0 16 16">
-                            <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
-                        </svg>
-                        <a href="perfil.html">${response.user}</a>
-                    </div>
+                    <a href="profile.html">
+                        <div id="perfil">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="bi bi-person" viewBox="0 0 16 16" fill="yellow">
+                                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
+                            </svg>
+                            ${response.user}
+                        </div>
+                    </a>
                 `;
             }
         }
@@ -264,7 +266,7 @@ async function createBook()
     DESCRICAO.value = "";
     IMAGEM_CAPA.value = "";
 }
-function removeBook(cod)
+function removeBook(titulo)
 {
     console.log(URL + `/livros/${titulo}`);
     fetch(
@@ -341,8 +343,8 @@ async function renderAdmin()
             else if(classElement.className.baseVal.indexOf("bi-trash3-fill") > 0){
                 if(confirm("Deseja realmente excluir este livro?"))
                 {
-                    removeBook(element.target);
-                    location.reload(true);
+                    removeBook(titulo);
+                    setTimeout(() => location.reload(true), 150);
                 }
             }
         }
