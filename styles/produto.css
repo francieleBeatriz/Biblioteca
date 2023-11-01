@@ -1,7 +1,10 @@
 main{
     height: 100%;
 }
-
+#titulo > a > svg{
+    transform: rotate(-5deg);
+    padding-right: 5px;
+}
 #produto{
     height: 100%;
     display: flex;
