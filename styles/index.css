@@ -6,6 +6,10 @@ main{
     align-items: center;
     justify-content: center;
 }
+#titulo > a > svg{
+    transform: rotate(-5deg);
+    padding-right: 5px;
+}
 #Livros{
     color: var(--cor-amarelo);
     font-size: 1.9rem;
